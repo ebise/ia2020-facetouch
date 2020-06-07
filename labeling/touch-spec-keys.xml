@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+
+<annotation-spec>
+
+  <doc>
+    This annotation specification was specifically developed to code
+    face touch events with wearglass jins meme. This scheme is thus 
+    suited for people unconsciously touch his/her face, which could 
+    lead to a high risk of infection during the covid-19 pandemic. 
+    The most dangerous zones with mucosa are mouth,nose and eyes. 
+    Other facial skin like forehead, chin, cheek and ears will also be tracked.
+    
+  </doc>
+
+<!-- **************** HEAD ********************** -->
+ 
+ <head>
+  <valuetype-def>
+
+   <valueset name="status">
+     <value-el color="#8cda8e" key="s">start</value-el>
+   </valueset>
+
+
+
+   <valueset name="touchType">
+    <value-el color="#eeee00" key="l">
+      lefthand
+    </value-el>
+    <value-el color="#ee8800" key="r">
+      righthand
+    </value-el>
+    <value-el color="#dd0000" key="b">
+      bothhands
+    </value-el>
+   </valueset>
+
+
+  </valuetype-def>
+ </head>
+
+<!-- ************************* BODY ******************** -->
+
+ <body>
+
+  <track-spec name="anchor" type="primary" color-attr="type" >
+    <attribute name="type" valuetype="status">
+    <doc>
+      This track help to determine the start point. The value <b>start</b> 
+      of attribute <b>status</b> records where the tracking begins. 
+      To ensure the correct loggen start at the same time, the photographed
+      person will press his/her nose hard and hold for a while for 3 times.
+    </doc>
+    </attribute>
+  </track-spec>
+    
+
+  <group name="mouthzone">
+    <doc>
+      This group clusters all hand touch events in the <b>mouth zone</b>. 
+      The members of this group give a detailed differentiations: <b>lips</b>,
+      <b>surroundings</b> and all possible <b>touches</b> in mouth zone. Overlap
+      is not possible. Look at description of <b>touch</b> values to see how 
+      that is coded.
+    </doc>
+    <track-spec name="touches" type="primary"  color-attr="type">
+      <attribute name="type" valuetype="touchType">
+      </attribute>
+    </track-spec>
+
+    <track-spec name="lips" type="span" ref="mouthzone.touches">
+      <attribute name="category" valuetype="touchType" display="true" />
+    </track-spec>
+
+    <track-spec name="surroundings" type="span" ref="mouthzone.touches" >
+      <attribute name="category" valuetype="touchType" display="true" />
+    </track-spec>
+
+  </group>
+
+  <group name="eyezone">
+    <doc>
+      This group clusters all hand touch events in the <b>eye zone</b>. 
+      The members of this group give a detailed differentiations: <b>left eye</b>,
+      <b>right eye</b>, <b>surroundings</b> and all possible <b>touches</b> in 
+      eyezone. Overlap is not possible. Look at description of <b>touch</b> values
+      to see how that is coded.
+    </doc>
+    <track-spec name="touches" type="primary"  color-attr="type">
+      <attribute name="type" valuetype="touchType">
+      </attribute>
+    </track-spec>
+
+    <track-spec name="left eye" type="span" ref="eyezone.touches">
+      <attribute name="category" valuetype="touchType" display="true" />
+    </track-spec>
+    <track-spec name="right eye" type="span" ref="eyezone.touches">
+      <attribute name="category" valuetype="touchType" display="true" />
+    </track-spec>
+
+    <track-spec name="surroundings" type="span" ref="eyezone.touches" >
+      <attribute name="category" valuetype="touchType" display="true" />
+    </track-spec>
+  </group>
+
+  <group name="nosezone">
+    <doc>
+      This group clusters all hand touch events in the <b>nose zone</b>. 
+      The members of this group give a detailed differentiations: <b>nostril</b>,
+      <b>surroundings</b> and all possible <b>touches</b> in mouth zone. Overlap
+      is not possible. Look at description of <b>touch</b> values to see how 
+      that is coded.
+    </doc>
+    <track-spec name="touches" type="primary"  color-attr="type">
+      <attribute name="type" valuetype="touchType">
+      </attribute>
+    </track-spec>
+
+    <track-spec name="nostril" type="span" ref="nosezone.touches">
+      <attribute name="category" valuetype="touchType" display="true" />
+    </track-spec>
+
+    <track-spec name="surroundings" type="span" ref="nosezone.touches" >
+      <attribute name="category" valuetype="touchType" display="true" />
+    </track-spec>
+
+  </group>
+    <group name="otherskin">
+    <doc>
+      This group clusters all hand touch events in all <b>other facial skin</b>. 
+      The members of this group give a detailed differentiations: <b>forehead</b>,
+      <b>cheek</b>, <b>chin</b>, <b>ears</b> and all possible <b>touches</b> on all other skin.
+      Overlap is not possible. Look at description of <b>touch</b> values to see how 
+      that is coded.
+    </doc>
+    <track-spec name="touches" type="primary"  color-attr="type">
+      <attribute name="type" valuetype="touchType">
+      </attribute>
+    </track-spec>
+
+    <track-spec name="forehead" type="span" ref="otherskin.touches">
+      <attribute name="category" valuetype="touchType" display="true" />
+    </track-spec>
+
+    <track-spec name="left cheek" type="span" ref="otherskin.touches" >
+      <attribute name="category" valuetype="touchType" display="true" />
+    </track-spec>
+    <track-spec name="right cheek" type="span" ref="otherskin.touches" >
+      <attribute name="category" valuetype="touchType" display="true" />
+    </track-spec>
+    <track-spec name="left chin" type="span" ref="otherskin.touches" >
+      <attribute name="category" valuetype="touchType" display="true" />
+    </track-spec>
+    <track-spec name="right chin" type="span" ref="otherskin.touches" >
+      <attribute name="category" valuetype="touchType" display="true" />
+    </track-spec>        
+    <track-spec name="left ear" type="span" ref="otherskin.touches" >
+      <attribute name="category" valuetype="touchType" display="true" />
+    </track-spec>
+    <track-spec name="right ear" type="span" ref="otherskin.touches" >
+      <attribute name="category" valuetype="touchType" display="true" />
+    </track-spec>
+        
+
+  </group>
+ </body> 
+
+
+
+</annotation-spec>
