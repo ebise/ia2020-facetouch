@@ -9,21 +9,25 @@ shortcut: f1 to start (green line) and f2 to end (red line) for creating a annot
 
 ### Guideline
 1. Open the video that should be annotated, change the sepcification in annotation properties to the path of touch-spec-keys.xml
-2. Click at the wished start point in timeline and press f1, click at the whished stop point press hotkeys (s=start,l=lefthand,r=righthand,b=bothhands) to create an annotation. Make sure the block is selected(pink shadow).
+2. Click at the wished start point in timeline and press f1, click at the whished stop point press hotkeys (q=begin,w=stop,a=lefthand,s=righthand,d=bothhands) to create an annotation. Make sure the block is selected(pink shadow).
 3. If once changed the spec file, remember to click the 3rd icon to reload the xml and click the 4th icon to refresh the annotation.
 
 ### Design of touch-spec-keys.xml
-There are overall 3 kinds of tracks.
-1. the **_anchor_** track to determinate start point.
-2. the **_mouthzone_**, **_eyezone_** and **_nosezone_** track the touch events at the most dangerous zones with mucosa. In each zone 3 or 4 subtracks are defined as follows:
+There are overall 4 kinds of tracks.
+1. the **_anchor_** track determinates start and end periods.
+2. the **_trl_** track records face touch in general.
+3. the **_mouthzone_**, **_eyezone_** and **_nosezone_** tracks reocrd the touch events at the most dangerous zones with mucosa. In each zone 3 to 5 subtracks are defined as follows:
     * the **_touches_** track record all touchs in this zone.
-    * the **_lips_**, **_left eye_**, **_right eye_**, **_nostril_** tracks record the direct touchs of the mucosa in each dangerous zones.
-    * the **_surroundings_** track record the touchs of surrounding skins in each dangerous zones
-3. the **_otherskin_** track the touch events at other facial skins, including forehead, chins, cheeks and ears. There are severl subtracks defined as follows:
-    * the **_touches_** track record all touchs in these facial parts.
-    * the **_forehead_**, **_left chin_**, **_right chin_**, **_left cheek_**, **_right cheek_**, **_left ear_**, **_right ear_** tracks record the touches in
-    regard to each facial part.
+    * the **_oralcavity_**, **_eyes_**, **_nostril_** tracks record the direct touchs of the mucosa in each dangerous zones.
+    * the **_left eye_**, **_right eye_** tracks record the direct touches of the eyes mucosa in detail.
+    * the **_surroundings_** track records the touches of surrounding skins in each dangerous zones
+4. the **_otherskin_** track the touch events at other facial skins, including forehead, jaws, cheeks and ears. There are severl subtracks defined as follows:
+    * the **_touches_** track records all touchs in these facial parts.
+    * the **_forehead_**, **_jaws_**, **_cheeks_**, **_ears_** tracks record the touches in regrad to each facial parts
+    * the **_left jaw_**, **_right jaw_**, **_left cheek_**, **_right cheek_**, **_left ear_**, **_right ear_** track the corresponidng touches in detail.
 
-* The **_anchor_** track  has a attribute **status** with a value **start**. The corresponidng hotkey is "s", and the block will be colored into green.
+* The **_anchor_** track  has a attribute **status** with value **begin** and **stop**. The corresponidng hotkeys are "q"and "w", and the block will be colored into green or red.
 * The last 2 types of tracks have a attribute **touchType** with values **lefthand**, 
-**righthand** and **bothhands**. The corresponding hotkeys are "l", "r" "b", and the block will be colored into yellow, orange and red.
+**righthand** and **bothhands**. The corresponding hotkeys are "a", "s" "d", and the block will be colored into yellow, orange and olive.
+* the **_trl_** track is the only primary track except the **_anchor_** track. That means once the blocks in **_trl_** track are annotated, annotation in following tracks could be easily remarked with double klicks and hotkeys for touchType (left-, right-, bothhands). Thus, the annoattion in **_trl_** tracks should includes all the breakpoints in every detail tracks below.
+* the **_touches_** tracks reference driectly to **_trl_**, the facial parts of this zone reference to **_touches_** in its groups(**_eyes_** reference to **_eyezone.touches_**, **_jaws_** reference to **_otherskin.touches_**), the detail destinguish of left and right reference to its corresponding facial parts(**_left eye_** reference to **_eyezone.eyes_**, **_left jaw_** reference to **_otherskin.jaws_**).
