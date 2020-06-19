@@ -1,0 +1,9 @@
+Specification details of the J!ns Meme recording mode for the logging files:
+
+Data mode: 200Hz EOG + 100 Hz Acc
+
+Frequency: 50Hz
+
+Range Acc.: 2G (default)
+
+Range Gyro.: 250DPS (default)
