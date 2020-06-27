@@ -1,0 +1,215 @@
+anchor:status
+*******************************************
+
+0 = none
+1 = begin
+2 = stop
+
+
+trl:touch
+*******************************************
+
+0 = none
+1 = lefthand
+2 = righthand
+3 = bothhands
+
+
+mouthzone.touches:touch
+*******************************************
+
+0 = none
+1 = lefthand
+2 = righthand
+3 = bothhands
+
+
+mouthzone.oralcavity:touch
+*******************************************
+
+0 = none
+1 = lefthand
+2 = righthand
+3 = bothhands
+
+
+mouthzone.surroundings:touch
+*******************************************
+
+0 = none
+1 = lefthand
+2 = righthand
+3 = bothhands
+
+
+eyezone.touches:touch
+*******************************************
+
+0 = none
+1 = lefthand
+2 = righthand
+3 = bothhands
+
+
+eyezone.eyes:touch
+*******************************************
+
+0 = none
+1 = lefthand
+2 = righthand
+3 = bothhands
+
+
+eyezone.left eye:touch
+*******************************************
+
+0 = none
+1 = lefthand
+2 = righthand
+3 = bothhands
+
+
+eyezone.right eye:touch
+*******************************************
+
+0 = none
+1 = lefthand
+2 = righthand
+3 = bothhands
+
+
+eyezone.surroundings:touch
+*******************************************
+
+0 = none
+1 = lefthand
+2 = righthand
+3 = bothhands
+
+
+nosezone.touches:touch
+*******************************************
+
+0 = none
+1 = lefthand
+2 = righthand
+3 = bothhands
+
+
+nosezone.nostril:touch
+*******************************************
+
+0 = none
+1 = lefthand
+2 = righthand
+3 = bothhands
+
+
+nosezone.surroundings:touch
+*******************************************
+
+0 = none
+1 = lefthand
+2 = righthand
+3 = bothhands
+
+
+otherskin.touches:touch
+*******************************************
+
+0 = none
+1 = lefthand
+2 = righthand
+3 = bothhands
+
+
+otherskin.forehead:touch
+*******************************************
+
+0 = none
+1 = lefthand
+2 = righthand
+3 = bothhands
+
+
+otherskin.cheeks:touch
+*******************************************
+
+0 = none
+1 = lefthand
+2 = righthand
+3 = bothhands
+
+
+otherskin.left cheek:touch
+*******************************************
+
+0 = none
+1 = lefthand
+2 = righthand
+3 = bothhands
+
+
+otherskin.right cheek:touch
+*******************************************
+
+0 = none
+1 = lefthand
+2 = righthand
+3 = bothhands
+
+
+otherskin.jaws:touch
+*******************************************
+
+0 = none
+1 = lefthand
+2 = righthand
+3 = bothhands
+
+
+otherskin.left jaw:touch
+*******************************************
+
+0 = none
+1 = lefthand
+2 = righthand
+3 = bothhands
+
+
+otherskin.right jaw:touch
+*******************************************
+
+0 = none
+1 = lefthand
+2 = righthand
+3 = bothhands
+
+
+otherskin.ears:touch
+*******************************************
+
+0 = none
+1 = lefthand
+2 = righthand
+3 = bothhands
+
+
+otherskin.left ear:touch
+*******************************************
+
+0 = none
+1 = lefthand
+2 = righthand
+3 = bothhands
+
+
+otherskin.right ear:touch
+*******************************************
+
+0 = none
+1 = lefthand
+2 = righthand
+3 = bothhands
+
+
