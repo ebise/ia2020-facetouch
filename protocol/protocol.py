@@ -3,24 +3,39 @@ import random
 import tkinter as tk
 from tkinter import messagebox
 from datetime import datetime
+from PIL import Image, ImageTk
 
 class App(tk.Tk):
     
     def __init__(self):
         tk.Tk.__init__(self)
+        
         #Declare protocol
-        self.protocol = ["Chin", "Forehead", "LeftCheek", "RightCheek"]
-        self.dictate = self.prepare(self.protocol, 1)
+        self.protocol = ["LeftEye", "RightEye", "Nose", "Mouth"]
+        self.repetition = 10
+        self.dictate = self.prepare(self.protocol, self.repetition)
         self.index = 0
         self.relativeTime = 0
+        self.randomizedTime = 0
+        
         #File name to be written
         self.f = ""
+        
+        #Path to image
+        self.imagePath = "image/"
+        
+        #Image to be shown
+        self.image = ImageTk.PhotoImage(Image.open(self.imagePath + "Start.jpg").resize((500, 400), Image.ANTIALIAS))
+        
         #Building the user interface
         self.lblProtocol = tk.Label(self, text = "", width = 10)
         self.lblProtocol.pack()
+        self.lblImage = tk.Label(self, image = self.image)
+        self.lblImage.pack()
         self.lblCountdown = tk.Label(self, text = "", width = 10)
         self.lblCountdown.pack()
-        self.remaining = 10
+        self.randomizedTime = random.randint(7,13)
+        self.remaining = self.randomizedTime
         self.btnStart = tk.Button(self, text="Start", command = self.toggle)
         self.btnStart.pack()
         self.btnRestart = tk.Button(self, text="Restart", command = self.restart)
@@ -51,7 +66,10 @@ class App(tk.Tk):
             self.relativeTime = 0
             self.remaining = 10
             self.index = 0
-            self.dictate = self.prepare(self.protocol)
+            self.randomizedTime = 0
+            self.dictate = self.prepare(self.protocol, self.repetition)
+            self.image = ImageTk.PhotoImage(Image.open(self.imagePath + self.dictate[self.index] + ".jpg").resize((500, 400), Image.ANTIALIAS))
+            self.lblImage.config(image = self.image)
             self.lblProtocol.config(text = "")
             self.lblCountdown.config(text = "")
     
@@ -73,7 +91,10 @@ class App(tk.Tk):
                 self.index = self.index + 1
                 self.writeFile()
                 self.lblProtocol.config(text = self.dictate[self.index])
-                self.remaining = 10
+                self.randomizedTime = random.randint(7,13)
+                self.remaining = self.randomizedTime
+                self.image = ImageTk.PhotoImage(Image.open(self.imagePath + self.dictate[self.index] + ".jpg").resize((500, 400), Image.ANTIALIAS))
+                self.lblImage.config(image = self.image)
                 self.cd()
     
     #This method repeat our protocol n times, randomize it and add opening and ending
@@ -94,10 +115,10 @@ class App(tk.Tk):
              now = datetime.now()
              time = now.strftime("%H:%M:%S")
              file.write(self.dictate[self.index] + "," + time + "," + str(self.relativeTime) + "\n")
-             self.relativeTime += 10
+             self.relativeTime += self.randomizedTime
  
 if __name__ == "__main__":
     app = App()
     app.title("FaceTouch - Protocol")
-    app.geometry("500x400")
+    app.geometry("600x800")
     app.mainloop()
