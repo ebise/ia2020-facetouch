@@ -82,6 +82,7 @@ class App(tk.Tk):
             self.lblImage.config(image = self.image)
             self.lblProtocol.config(text = "")
             self.lblCountdown.config(text = "")
+            self.stopped = False
     
     #This method start the timer on self.remaining variable
     #remaining: if not empty replace self.remaining with this value, if empty, use self.remaining
