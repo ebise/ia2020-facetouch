@@ -27,11 +27,11 @@ class App(tk.Tk):
         self.image = ImageTk.PhotoImage(Image.open(self.imagePath + "Start.jpg").resize((500, 400), Image.ANTIALIAS))
         
         #Building the user interface
-        self.lblProtocol = tk.Label(self, text = "", width = 10)
+        self.lblProtocol = tk.Label(self, text = "", width = 100, font=("Courier", 20))
         self.lblProtocol.pack()
         self.lblImage = tk.Label(self, image = self.image)
         self.lblImage.pack()
-        self.lblCountdown = tk.Label(self, text = "", width = 10)
+        self.lblCountdown = tk.Label(self, text = "", width = 10, font=("Courier", 20))
         self.lblCountdown.pack()
         self.randomizedTime = random.randint(7,13)
         self.remaining = self.randomizedTime
@@ -92,6 +92,11 @@ class App(tk.Tk):
         
         if remaining is not None:
             self.remaining = remaining
+            
+        if self.remaining == 2 and self.index != len(self.dictate)-1:
+            self.lblProtocol.config(text = self.dictate[self.index] + "(Beware, next protocol!)")
+            self.image = ImageTk.PhotoImage(Image.open(self.imagePath + "Next.jpg").resize((500,400), Image.ANTIALIAS))
+            self.lblImage.config(image = self.image)
         
         if self.remaining >= 0:
             self.lblCountdown.configure(text = "%d" % self.remaining)
