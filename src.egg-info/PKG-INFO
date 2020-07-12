@@ -1,0 +1,13 @@
+Metadata-Version: 1.2
+Name: src
+Version: 0.0.1
+Summary: A auxiliary package for data preprocessing and visualization
+Home-page: UNKNOWN
+Author: FaceTouch
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6.9
