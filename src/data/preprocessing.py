@@ -19,8 +19,11 @@ def loaddata():
   list_of_labeldfs = [pd.read_csv(filename, sep=";") for filename in labelfilenames]
   label_list = []
   for dataframe, filename in zip(list_of_labeldfs, labelfilenames):
-      data_label=dataframe[['Time', 'trl', 'nosezone.touches', 'mouthzone.touches', 'eyezone.right eye', 'eyezone.left eye']].copy()
-      data_label.columns = ['timeAfterStart', 'isTouch', 'nose', 'mouth', 'rightEye', 'leftEye']
+      data_label=dataframe[['Time', 'anchor:status','trl', 'nosezone.touches', 'mouthzone.touches', 'eyezone.right eye', 'eyezone.left eye']].copy()
+      data_label.columns = ['timeAfterStart','anchor', 'isTouch', 'nose', 'mouth', 'rightEye', 'leftEye']
       label_list.append(data_label)
   return data_list, label_list
+
+#def labeling(data_df,label_df):
+
 

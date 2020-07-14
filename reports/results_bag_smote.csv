@@ -1,0 +1,6 @@
+# TEST CONFIGURATION BEGIN
+# DataStream(n_targets=-1, target_idx=1, cat_features=None, name=None)
+# [bagging_smote] OnlineSMOTEBaggingClassifier(base_estimator=KNNADWINClassifier(leaf_size=30, max_window_size=1000, metric='euclidean', n_neighbors=5), drift_detection=True, n_estimators=10, random_state=None, sampling_rate=1)
+# EvaluatePrequential(batch_size=1, data_points_for_classification=False, max_samples=30000, max_time=inf, metrics=['accuracy', 'precision', 'recall', 'f1'], n_wait=200, output_file='results_bag_smote.csv', pretrain_size=6000, restart_stream=True, show_plot=True)
+# TEST CONFIGURATION END
+id,mean_acc_[bagging_smote],current_acc_[bagging_smote],mean_precision_[bagging_smote],current_precision_[bagging_smote],mean_recall_[bagging_smote],current_recall_[bagging_smote],mean_f1_[bagging_smote],current_f1_[bagging_smote]

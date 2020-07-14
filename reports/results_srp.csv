@@ -1,0 +1,12 @@
+# TEST CONFIGURATION BEGIN
+# DataStream(n_targets=-1, target_idx=1, cat_features=None, name=None)
+# [SRP] StreamingRandomPatchesClassifier(base_estimator=HoeffdingTreeClassifier(binary_split=False, grace_period=50, leaf_prediction='nba', max_byte_size=33554432, memory_estimate_period=1000000, nb_threshold=0, no_preprune=False, nominal_attributes=None, remove_poor_atts=False, split_confidence=0.01, split_criterion='info_gain', stop_mem_management=False, tie_threshold=0.05), disable_background_learner=False, disable_drift_detection=False, disable_weighted_vote=False, drift_detection_method=ADWIN(delta=1e-05), lam=6.0, n_estimators=3, nominal_attributes=[], random_state=1, subspace_mode='percentage', subspace_size=60, training_method='randompatches', warning_detection_method=ADWIN(delta=0.0001))
+# EvaluatePrequential(batch_size=500, data_points_for_classification=False, max_samples=30000, max_time=inf, metrics=['accuracy', 'precision', 'recall', 'f1'], n_wait=200, output_file='results_srp.csv', pretrain_size=16000, restart_stream=True, show_plot=True)
+# TEST CONFIGURATION END
+id,mean_acc_[SRP],current_acc_[SRP],mean_precision_[SRP],current_precision_[SRP],mean_recall_[SRP],current_recall_[SRP],mean_f1_[SRP],current_f1_[SRP]
+16000,0.964000,0.920000,0.322624,0.306667,0.331956,0.333333,0.327223,0.319444
+16500,0.948000,0.835000,0.190937,0.170408,0.199160,0.198810,0.194961,0.183516
+17000,0.964667,1.000000,0.193968,0.200000,0.199311,0.200000,0.196603,0.200000
+17500,0.958000,0.920000,0.192466,0.184000,0.199376,0.200000,0.195860,0.191667
+18000,0.966400,1.000000,0.193978,0.200000,0.199505,0.200000,0.196703,0.200000
+18500,0.956333,1.000000,0.259538,0.200000,0.201623,0.200000,0.201550,0.200000

@@ -1,0 +1,6 @@
+# TEST CONFIGURATION BEGIN
+# DataStream(n_targets=-1, target_idx=1, cat_features=None, name=None)
+# [bagging_uo] OnlineUnderOverBaggingClassifier(base_estimator=KNNADWINClassifier(leaf_size=30, max_window_size=1000, metric='euclidean', n_neighbors=5), drift_detection=True, n_estimators=10, random_state=None, sampling_rate=2)
+# EvaluatePrequential(batch_size=1, data_points_for_classification=False, max_samples=30000, max_time=inf, metrics=['accuracy', 'precision', 'recall', 'f1'], n_wait=200, output_file='results_bag_uo.csv', pretrain_size=10000, restart_stream=True, show_plot=True)
+# TEST CONFIGURATION END
+id,mean_acc_[bagging_uo],current_acc_[bagging_uo],mean_precision_[bagging_uo],current_precision_[bagging_uo],mean_recall_[bagging_uo],current_recall_[bagging_uo],mean_f1_[bagging_uo],current_f1_[bagging_uo]
